@@ -54,17 +54,16 @@ namespace BASM
                 QuickSortD(ref arr, piv.Item2 + 1, right);
             }
         }
+
+        //?
         public static (int, int) DualPartition(ref int[] arr, int left, int right)
         {
             if (arr[left] > arr[right])
                 Swap(ref arr, left, right);
-
-            // p is the left pivot, and q
-            // is the right pivot.
             int j = left + 1;
             int g = right - 1, k = left + 1,
 
-                p = arr[left], q = arr[right];
+            p = arr[left], q = arr[right];
 
             while (k <= g)
             {
@@ -526,8 +525,6 @@ namespace BASM
                 if (i < right)
                     QuickSortMUI(ref arr, i, right);
             }
-        }
-        
-    
+        } 
     }
 }
