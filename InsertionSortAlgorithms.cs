@@ -8,8 +8,6 @@ namespace BASM
 {
     public static class InsertionSortAlgorithms
     {
-        //https://en.wikipedia.org/wiki/Insertion_sort
-        //https://habr.com/ru/post/415935/
         //worst:   O(n²)
         //avarage: O(n²)
         //best:    O(n)
@@ -34,7 +32,6 @@ namespace BASM
 
         public static void InsertionSortD(ref int[] arr, int left, int right)
         {
-
             for (int i = left; i < right; i += 2)
             {
                 int t = i - 1;
@@ -80,7 +77,6 @@ namespace BASM
         {
 
             InsertionSortM(ref arr, 0, 7);
-
             fixed (int* ptr = arr)
             {
                 for (int i = 8; i < arr.Length; i++)
@@ -92,7 +88,6 @@ namespace BASM
                     {
                         if (j < 0)
                         {
-
                             var sv = Avx2.LoadVector256(ptr);
                             var res = Avx2.MoveMask((Avx2.CompareGreaterThan(v2, sv)).AsByte());
                             var co = Popcnt.PopCount(unchecked((uint)(res))) >> 2;
@@ -234,7 +229,5 @@ namespace BASM
                 arr[j + 1] = curr;
             }
         }
-
-
     }
 }
