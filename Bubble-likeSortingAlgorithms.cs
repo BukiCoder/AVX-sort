@@ -14,6 +14,7 @@ namespace BASM
             arr[i] = arr[j];
             arr[j] = temp;
         }
+        
         void BubbleSort(ref int[] arr)
         {
             bool sorted = true;
@@ -32,6 +33,7 @@ namespace BASM
                 if (sorted) break;
             }
         }
+        
         void ShakeSort(ref int[] arr)
         {
             int p1 = 0;
@@ -56,6 +58,7 @@ namespace BASM
                 p1++;
             }
         }
+        
         void OddEvenSort(ref int[] arr)
         {
             bool sorted = false;
@@ -82,9 +85,6 @@ namespace BASM
             }
         }
 
-
-
-
         void CombSort(ref int[] arr)
         {
             int step = arr.Length - 1;
@@ -100,6 +100,7 @@ namespace BASM
                 step = (int)(step / 1.2473309f);
             }
         }
+        
         void GnomeSort(int[] arr)
         {
             int i = 1;
@@ -111,9 +112,6 @@ namespace BASM
                     i = j;
                     j++;
                 }
-
-
-
                 else
                 {
                     Swap(ref arr, i - 1, i);
@@ -123,11 +121,8 @@ namespace BASM
                         i = j;
                         j = j++;
                     }
-
                 }
-
             }
         }
-
     }
 }
